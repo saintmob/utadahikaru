@@ -30,6 +30,7 @@ interface EmotionCategory {
   gradient: string;
   shadowColor: string;
   audioUrl: string;
+  recordColor: string;
 }
 
 interface Album {
@@ -39,6 +40,7 @@ interface Album {
   endColor: string;
   cover: string;
   keyword: string;
+  audioUrl?: string;
 }
 
 interface Song {
@@ -58,6 +60,7 @@ interface TimelineNode {
   description: string;
   color: string;
   image: string;
+  audioUrl?: string;
 }
 
 const EMOTIONS: EmotionCategory[] = [
@@ -68,7 +71,8 @@ const EMOTIONS: EmotionCategory[] = [
     description: "稚嫩情感在冬日空气中弥散，是无法忘怀的烟味，也是永远的蓝。",
     gradient: "from-[#6CB4D9] to-coral/40",
     shadowColor: "rgba(108, 180, 217, 0.4)",
-    audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/first%20love.mp3"
+    audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/firstlove2.mp3",
+    recordColor: "#6CB4D9"
   },
   {
     name: "爱的缤纷",
@@ -77,7 +81,8 @@ const EMOTIONS: EmotionCategory[] = [
     description: "爱如光谱炸裂，每一滴颜色都是对彼此灵魂的涂鸦。",
     gradient: "from-coral to-gold/60",
     shadowColor: "rgba(255, 107, 107, 0.4)",
-    audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/colors.mp3"
+    audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/colors.mp3",
+    recordColor: "#FF6B6B"
   },
   {
     name: "丧母之痛",
@@ -86,7 +91,8 @@ const EMOTIONS: EmotionCategory[] = [
     description: "用声音修剪一束永不枯萎的力量，送往那个没有阴影的世界。",
     gradient: "from-rain-grey to-deep-blue/30",
     shadowColor: "rgba(142, 154, 175, 0.4)",
-    audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/HUASHU.mp3"
+    audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/HUASHU.mp3",
+    recordColor: "#8E9AAF"
   },
   {
     name: "母亲的无限爱",
@@ -95,7 +101,8 @@ const EMOTIONS: EmotionCategory[] = [
     description: "生命在雨中洗礼，感受到代际传承的体温与那份无法切断的眷恋。",
     gradient: "from-gold to-sky-blue/40",
     shadowColor: "rgba(255, 215, 0, 0.4)",
-    audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/shengxia.mp3"
+    audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/shengxia.mp3",
+    recordColor: "#FFD700"
   },
   {
     name: "自我囚禁",
@@ -104,7 +111,8 @@ const EMOTIONS: EmotionCategory[] = [
     description: "令人心痛的温柔谎言。",
     gradient: "from-deep-blue to-void",
     shadowColor: "rgba(27, 58, 92, 0.4)",
-    audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/PrisonerOfLove.mp3"
+    audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/PrisonerOfLove2.mp3",
+    recordColor: "#1B3A5C"
   },
   {
     name: "告别与新生",
@@ -113,7 +121,8 @@ const EMOTIONS: EmotionCategory[] = [
     description: "纵使世界末日，最后那个吻依然带着足以毁灭又足以重塑的力量。",
     gradient: "from-electric-purple to-sky-blue/60",
     shadowColor: "rgba(139, 0, 255, 0.4)",
-    audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/onelastkiss.mp3"
+    audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/onelastkiss.mp3",
+    recordColor: "#8B00FF"
   },
   {
     name: "纯真守护",
@@ -122,17 +131,18 @@ const EMOTIONS: EmotionCategory[] = [
     description: "温暖中带着看透无常的哀愁，祈求“金色”的纯真消逝得慢一点。",
     gradient: "from-[#D9A05B] to-gold/40",
     shadowColor: "rgba(217, 160, 91, 0.4)",
-    audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/StayGold.mp3"
+    audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/StayGold2.mp3",
+    recordColor: "#D9A05B"
   }
 ];
 
 const ALBUMS: Album[] = [
-  { name: "First Love", year: "1999", startColor: "#6CB4D9", endColor: "#1B3A5C", cover: imgFirstLove, keyword: "震撼" },
-  { name: "Distance", year: "2001", startColor: "#FF6B6B", endColor: "#FFD700", cover: imgDisdan, keyword: "跨越" },
-  { name: "Deep River", year: "2002", startColor: "#1B3A5C", endColor: "#0B1A2D", cover: imgDeepRiver, keyword: "沉思" },
-  { name: "ULTRA BLUE", year: "2006", startColor: "#1E3B70", endColor: "#295390", cover: imgUltra, keyword: "电子" },
-  { name: "Fantôme", year: "2016", startColor: "#8E9AAF", endColor: "#333", cover: imgFantome, keyword: "悼亡" },
-  { name: "BAD MODE", year: "2022", startColor: "#8B00FF", endColor: "#FF6B6B", cover: imgBad, keyword: "当代" }
+  { name: "First Love", year: "1999", startColor: "#6CB4D9", endColor: "#1B3A5C", cover: imgFirstLove, keyword: "震撼", audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/firstlove2.mp3" },
+  { name: "Distance", year: "2001", startColor: "#FF6B6B", endColor: "#FFD700", cover: imgDisdan, keyword: "跨越", audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/disdance.mp3" },
+  { name: "Deep River", year: "2002", startColor: "#1B3A5C", endColor: "#0B1A2D", cover: imgDeepRiver, keyword: "沉思", audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/deepriver.mp3" },
+  { name: "ULTRA BLUE", year: "2006", startColor: "#1E3B70", endColor: "#295390", cover: imgUltra, keyword: "电子", audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/ultrablue2.mp3" },
+  { name: "Fantôme", year: "2016", startColor: "#8E9AAF", endColor: "#333", cover: imgFantome, keyword: "悼亡", audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/fantone.mp3" },
+  { name: "BAD MODE", year: "2022", startColor: "#8B00FF", endColor: "#FF6B6B", cover: imgBad, keyword: "当代", audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/badmode.mp3" }
 ];
 
 const SONGS: Song[] = [
@@ -154,7 +164,7 @@ const SONGS: Song[] = [
     lyrics: "最後のキスは タバコの flavor がした 苦くてせつない香り",
     lyricsCN: "最后的吻，有着烟草的味道，那是既苦涩又哀切的香气。",
     cover: imgFirstLove,
-    audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/first%20love.mp3"
+    audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/firstlove.mp3"
   },
   {
     name: "Colors",
@@ -174,7 +184,7 @@ const SONGS: Song[] = [
     lyrics: "普段からメイクしない君の 薄い化粧した顔を忘れないよ",
     lyricsCN: "平时从不化妆的你，那略施薄粉的脸庞，我永远不会忘记。",
     cover: imgFantome,
-    audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/fantone.mp3"
+    audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/HUASHU.mp3"
   },
   {
     name: "One Last Kiss",
@@ -199,14 +209,15 @@ const SONGS: Song[] = [
 ];
 
 const TIMELINE: TimelineNode[] = [
-  { year: "1998", event: "天才降临", description: "《Automatic》横空出世，开启日本R&B新时代。", color: "#6CB4D9", image: imgAutomatic },
-  { year: "1999", event: "初恋震撼", description: "《First Love》创下近千万销量纪录，成为不朽传奇。", color: "#FF6B6B", image: imgFirstLove },
-  { year: "2002", event: "婚姻与深流", description: "个人生活的变迁带动音乐向更深邃的《Deep River》探索。", color: "#1B3A5C", image: imgDeepRiver },
-  { year: "2007", event: "沉寂与过渡", description: "《HEART STATION》后进入“人间活动”沉寂期。", color: "#8E9AAF", image: imgHeart },
-  { year: "2016", event: "悼亡复出", description: "带着献给母亲的《Fantôme》重归，哀而不伤。", color: "#8E9AAF", image: imgFantome },
-  { year: "2018", event: "新生", description: "《初恋》发行，重申出道二十年的成熟心境。", color: "#FF6B6B", image: imgPic3 },
-  { year: "2022", event: "自由重塑", description: "《BAD MODE》展现极度自由的电子爵士风采。", color: "#8B00FF", image: imgBad },
-  { year: "2024", event: "电气化纪元", description: "SCIENCE FICTION巡演，将情感彻底解码为电信号。", color: "#8B00FF", image: imgPic4 }
+  { year: "1998", event: "天才降临", description: "《Automatic》横空出世，开启日本R&B新时代。", color: "#6CB4D9", image: imgAutomatic, audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/automatic.mp3" },
+  { year: "1999", event: "初恋震撼", description: "《First Love》创下近千万销量纪录，成为不朽传奇。", color: "#FF6B6B", image: imgFirstLove, audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/firstlove2.mp3" },
+  { year: "2002", event: "婚姻与深流", description: "个人生活的变迁带动音乐向更深邃的《Deep River》探索。", color: "#1B3A5C", image: imgDeepRiver, audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/deepriver.mp3" },
+  { year: "2007", event: "沉寂与过渡", description: "《HEART STATION》后进入“人间活动”沉寂期。", color: "#8E9AAF", image: imgHeart, audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/StayGold2.mp3" },
+  { year: "2016", event: "悼亡复出", description: "带着献给母亲的《Fantôme》重归，哀而不伤。", color: "#8E9AAF", image: imgFantome, audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/fantone.mp3" },
+  { year: "2018", event: "新生", description: "《初恋》发行，重申出道二十年的成熟心境。", color: "#FF6B6B", image: imgPic3, audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/shiyan.mp3" },
+  { year: "2021", event: "终焉之吻", description: "《One Last Kiss》为新世纪福音战士剧场版画上句号。", color: "#8B00FF", image: imgKiss, audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/onelastkiss.mp3" },
+  { year: "2022", event: "自由重塑", description: "《BAD MODE》展现极度自由的电子爵士风采。", color: "#8B00FF", image: imgBad, audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/badmode.mp3" },
+  { year: "2024", event: "电气化纪元", description: "SCIENCE FICTION巡演，将情感彻底解码为电信号。", color: "#8B00FF", image: imgPic4, audioUrl: "https://github.com/chenmanqi750-creator/mymusic/raw/refs/heads/main/can.mp3" }
 ];
 
 // --- Components ---
@@ -296,7 +307,7 @@ const BearCursor = () => {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
   
-  const springConfig = { damping: 25, stiffness: 150 };
+  const springConfig = { damping: 10, stiffness: 600 };
   const sx = useSpring(cursorX, springConfig);
   const sy = useSpring(cursorY, springConfig);
 
@@ -427,6 +438,7 @@ export default function App() {
   const [playingAlbum, setPlayingAlbum] = useState<number | null>(null);
   const [activeTimelineIdx, setActiveTimelineIdx] = useState(0);
   const [timelineVisible, setTimelineVisible] = useState(false);
+  const [songPanelVisible, setSongPanelVisible] = useState(false);
   const [activeAlbumColor, setActiveAlbumColor] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
@@ -451,7 +463,24 @@ export default function App() {
       setActiveTimelineIdx((prev) => (prev - 1 + TIMELINE.length) % TIMELINE.length);
     }
   };
-  
+
+  useEffect(() => {
+    if (timelineVisible) {
+      const url = TIMELINE[activeTimelineIdx].audioUrl;
+      if (url) setActiveTrack(url);
+    } else {
+       // Optional: restore MAIN_BGM when timeline leaves viewport
+       // but wait, if they go to another section and click play, it sets it.
+    }
+  }, [activeTimelineIdx, timelineVisible]);
+
+  useEffect(() => {
+    if (songPanelVisible) {
+      const url = SONGS[currentSong].audioUrl;
+      if (url) setActiveTrack(url);
+    }
+  }, [currentSong, songPanelVisible]);
+
   const handleScroll = (direction: 'next' | 'prev') => {
     if (direction === 'next') {
       setCurrentSong((prev) => (prev + 1) % SONGS.length);
@@ -499,19 +528,6 @@ export default function App() {
       <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-void to-deep-blue text-warm-white p-6">
         <RainOverlay />
         
-        <motion.div
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 0.4, scale: 1 }}
-          transition={{ duration: 3 }}
-          className="absolute inset-0 z-0"
-        >
-          <img 
-            src="https://images.unsplash.com/photo-1514525253361-bee24383c87f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
-            alt="Utada Portrait" 
-            className="w-full h-full object-cover filter grayscale"
-          />
-        </motion.div>
-
         <div className="relative z-10 w-full h-full">
           <FogReveal>
             <div className="text-center px-6">
@@ -559,18 +575,24 @@ export default function App() {
                 scale: 1.05, 
                 boxShadow: `0 20px 40px ${item.shadowColor}` 
               }}
+              onClick={() => {
+                const isPlaying = playingEmotion === idx;
+                if (isPlaying) {
+                  setPlayingEmotion(null);
+                  setActiveTrack(MAIN_BGM);
+                } else {
+                  setPlayingEmotion(idx);
+                  setActiveTrack(item.audioUrl);
+                }
+              }}
               onMouseEnter={() => {
                 setHoveredColor(item.shadowColor);
-                setPlayingEmotion(idx);
-                setActiveTrack(item.audioUrl); // Switch to specific interaction track
               }}
               onMouseLeave={() => {
                 setHoveredColor(null);
-                setPlayingEmotion(null);
-                setActiveTrack(MAIN_BGM); // Restore main background music
               }}
               viewport={{ once: true }}
-              className={`p-8 rounded-2xl bg-gradient-to-br ${item.gradient} glass text-white flex flex-col h-full min-h-[340px] transition-all relative overflow-hidden group`}
+              className={`p-8 rounded-2xl bg-gradient-to-br ${item.gradient} glass text-white flex flex-col h-full min-h-[340px] transition-all relative overflow-hidden group cursor-pointer`}
             >
               <div className="relative z-10 flex flex-col h-full">
                 <h3 className="text-2xl font-serif mb-2">{item.name}</h3>
@@ -602,11 +624,22 @@ export default function App() {
               <AnimatePresence>
                 {playingEmotion === idx && (
                   <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 0.15 }}
-                    exit={{ opacity: 0 }}
-                    className="absolute inset-0 bg-white pointer-events-none"
-                  />
+                    initial={{ scale: 0.5, opacity: 0, rotate: -90 }}
+                    animate={{ scale: 1, opacity: 1, rotate: 0 }}
+                    exit={{ scale: 0.8, opacity: 0, transition: { duration: 0.3 } }}
+                    className="absolute -right-8 -top-8 w-48 h-48 rounded-full border-[10px] border-white/10 shadow-2xl z-0 flex items-center justify-center overflow-hidden"
+                    style={{ backgroundColor: "#111" }}
+                  >
+                     <motion.div 
+                        animate={{ rotate: 360 }}
+                        transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
+                        className="w-full h-full rounded-full relative flex items-center justify-center"
+                     >
+                        <div className="absolute inset-0 bg-[repeating-radial-gradient(ellipse_at_center,_transparent,_transparent_2px,_rgba(255,255,255,0.05)_3px,_rgba(255,255,255,0.05)_4px)]" />
+                        <div className="w-16 h-16 rounded-full shadow-inner" style={{ backgroundColor: item.recordColor }} />
+                        <div className="absolute w-4 h-4 bg-[#111] rounded-full border-2 border-white/20" />
+                     </motion.div>
+                  </motion.div>
                 )}
               </AnimatePresence>
             </motion.div>
@@ -666,9 +699,6 @@ export default function App() {
                   alt={TIMELINE[activeTimelineIdx].year} 
                   className="relative w-full aspect-square object-cover rounded-3xl shadow-lg grayscale hover:grayscale-0 transition-all duration-700" 
                 />
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur shadow-sm px-4 py-1 rounded-full text-sm font-bold tracking-widest">
-                  {activeTimelineIdx + 1} / {TIMELINE.length}
-                </div>
               </div>
 
               <div className="flex flex-col text-left">
@@ -725,20 +755,28 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               onMouseEnter={() => {
                 setHoveredAlbumColor(album.startColor);
-                setPlayingAlbum(idx);
-                setActiveTrack(INTERACTION_TRACK); // Switch to interaction track
               }}
               onMouseLeave={() => {
                 setHoveredAlbumColor(null);
-                setPlayingAlbum(null);
-                setActiveTrack(MAIN_BGM); // Restore main background music
+              }}
+              onClick={() => {
+                const isPlaying = playingAlbum === idx;
+                if (isPlaying) {
+                  setPlayingAlbum(null);
+                  setActiveTrack(MAIN_BGM);
+                } else {
+                  setPlayingAlbum(idx);
+                  if (album.audioUrl) {
+                    setActiveTrack(album.audioUrl);
+                  }
+                }
               }}
               // 当卡片进入中心视野（或占比较大时）更新背景色
               onViewportEnter={() => setActiveAlbumColor(album.startColor)}
               onViewportLeave={() => setActiveAlbumColor(null)}
               viewport={{ margin: "-20%" }} 
               transition={{ delay: idx * 0.1 }}
-              className="flex-shrink-0 w-72 h-96 relative rounded-2xl overflow-hidden group shadow-lg snap-center"
+              className="flex-shrink-0 w-72 h-96 relative rounded-2xl overflow-hidden group shadow-lg snap-center cursor-pointer"
               style={{ background: `linear-gradient(to bottom right, ${album.startColor}, ${album.endColor})` }}
             >
               {/* Playing Visualizer */}
@@ -764,12 +802,12 @@ export default function App() {
                   className="w-40 h-40 object-cover shadow-2xl group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100"
                 />
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-8 text-white bg-gradient-to-t from-black/60 to-transparent">
+               <div className="absolute bottom-0 left-0 right-0 p-8 text-white bg-gradient-to-t from-black/60 to-transparent">
                 <span className="text-xs uppercase tracking-widest opacity-80">{album.year}</span>
                 <h3 className="text-2xl font-serif mt-1">{album.name}</h3>
                 <div className="mt-4 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity">
                    <span className="text-sm italic">{album.keyword}</span>
-                   {playingAlbum === idx ? <Play fill="currentColor" size={16} /> : <Share2 size={16} />}
+                   {/* removed play button here intentionally based on user request */}
                 </div>
               </div>
             </motion.div>
@@ -778,39 +816,68 @@ export default function App() {
       </section>
 
       {/* 5. Represented Song Panel */}
-      <section className="py-32 px-6 md:px-12 bg-void text-warm-white">
+      <motion.section 
+        className="py-32 px-6 md:px-12 bg-void text-warm-white relative overflow-hidden"
+        onViewportEnter={() => setSongPanelVisible(true)}
+        onViewportLeave={() => setSongPanelVisible(false)}
+      >
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 items-center">
           
-          <div className="w-full md:w-1/2 aspect-square relative overflow-hidden rounded-3xl group">
+          <div className="w-full md:w-1/2 aspect-square relative flex items-center justify-center group pointer-events-none">
+             {/* Ripples layer */}
+             {activeTrack === SONGS[currentSong].audioUrl && (
+                <div className="absolute inset-0 flex items-center justify-center z-0">
+                  {[...Array(5)].map((_, i) => (
+                    <motion.div
+                      key={currentSong + "-" + i}
+                      className="absolute border border-white/20"
+                      style={{ 
+                         backgroundColor: `${SONGS[currentSong].color}1A`,
+                         boxShadow: `0 0 40px ${SONGS[currentSong].color}40`,
+                         width: '100%',
+                         height: '100%',
+                      }}
+                      initial={{ 
+                        opacity: 0.8, 
+                        scale: 0.8,
+                        borderRadius: "40% 60% 70% 30% / 40% 50% 60% 50%"
+                      }}
+                      animate={{ 
+                        opacity: 0, 
+                        scale: 4,
+                        rotate: 90,
+                        borderRadius: [
+                          "40% 60% 70% 30% / 40% 50% 60% 50%", 
+                          "60% 40% 30% 70% / 60% 50% 40% 50%",
+                          "40% 60% 70% 30% / 40% 50% 60% 50%"
+                        ]
+                      }}
+                      transition={{ 
+                        duration: 8, 
+                        repeat: Infinity, 
+                        delay: i * 1.6,
+                        ease: "linear"
+                      }}
+                    />
+                  ))}
+                </div>
+             )}
+             
              <AnimatePresence mode='wait'>
                 <motion.img
                   key={currentSong}
                   src={SONGS[currentSong].cover}
                   alt={SONGS[currentSong].name}
                   initial={{ opacity: 0, scale: 1.1 }}
-                  animate={{ opacity: 0.6, scale: 1 }}
+                  animate={{ opacity: 0.85, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.8 }}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-3xl shadow-2xl relative z-10"
                 />
              </AnimatePresence>
-             <div className="absolute inset-0 flex items-center justify-center">
-                <motion.button
-                   whileHover={{ scale: 1.1 }}
-                   whileTap={{ scale: 0.9 }}
-                   onClick={() => {
-                     if (SONGS[currentSong].audioUrl) {
-                       setActiveTrack(SONGS[currentSong].audioUrl);
-                     }
-                   }}
-                   className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white z-10"
-                >
-                  <Play fill="currentColor" size={32} className="ml-1" />
-                </motion.button>
-             </div>
           </div>
 
-          <div className="w-full md:w-1/2 flex flex-col items-start text-left">
+          <div className="w-full md:w-1/2 flex flex-col items-start text-left z-10">
             <motion.div
                key={currentSong}
                initial={{ opacity: 0, x: 20 }}
@@ -851,7 +918,7 @@ export default function App() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* 6. Footer */}
       <footer className="py-24 px-6 md:px-12 bg-warm-white text-void/40 border-t border-void/5">
